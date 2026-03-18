@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Seus Contatos</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <h2>Seus Contatos</h2>
+  <p>
+    <a href="/logout">Sair</a> |
+    <a href="/contatos/novo">Novo Contato</a>
+  </p>
+
+  <ul>
+    {{#contatos}}
+      <li>
+        <div class="contato-info">
+          <b>{{nome}}</b> - {{telefone}} - {{emailContato}}
+        </div>
+        <div class="acoes">
+          <form method="POST" action="/contatos/excluir/{{id}}">
+            <button type="submit" class="excluir">Excluir</button>
+          </form>
+          <a href="/contatos/editar/{{id}}" class="editar">Editar</a>
+        </div>
+      </li>
+    {{/contatos}}
+
+    {{^contatos}}
+      <li>Nenhum contato cadastrado.</li>
+    {{/contatos}}
+  </ul>
+
+</body>
+</html>

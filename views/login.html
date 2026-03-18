@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Agenda de Contatos</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <h2>Entrar na Agenda</h2>
+
+  {{#erro}}
+    <p style="color: red;">{{erro}}</p>
+  {{/erro}}
+
+  <form method="POST" action="/login">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="senha" placeholder="Senha" required>
+    <button type="submit">Entrar</button>
+  </form>
+
+  <p>Ainda não tem conta? <a href="/register">Cadastre-se</a></p>
+
+</body>
+</html>

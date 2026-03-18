@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>{{#contato.id}}Editar{{/contato.id}}{{^contato.id}}Novo{{/contato.id}} Contato</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <h2>{{#contato.id}}Editar{{/contato.id}}{{^contato.id}}Novo{{/contato.id}} Contato</h2>
+
+  <form method="POST" action="{{#contato.id}}/contatos/editar/{{contato.id}}{{/contato.id}}{{^contato.id}}/contatos/novo{{/contato.id}}">
+    <input name="nome" placeholder="Nome" value="{{contato.nome}}" required>
+    <input name="telefone" placeholder="Telefone" value="{{contato.telefone}}" required>
+    <input name="emailContato" placeholder="Email do Contato" value="{{contato.emailContato}}" required>
+    <button type="submit">Salvar</button>
+  </form>
+
+  <p><a href="/contatos">Voltar</a></p>
+
+</body>
+</html>
